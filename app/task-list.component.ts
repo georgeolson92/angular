@@ -7,16 +7,7 @@ import { Task } from './task.model';
     inputs: ['taskList'],
     outputs: ['onTaskSelect'],
     directives: [TaskComponent],
-  template: `
-    <div class="container">
-      <task-display *ngFor="#currentTask of taskList"
-      (click)="taskClicked(currentTask)"
-      [class.selected]="currentTask === selectedTask"
-      [task]="currentTask">
-        {{ currentTask.description }}
-      </task-display>
-    </div>
-  `
+    templateUrl: 'app/task-list.component.html' 
 })
 export class TaskListComponent {
   public taskList: Task[];
